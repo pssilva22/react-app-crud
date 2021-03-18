@@ -2,7 +2,7 @@ import React from 'react';
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 
-const ClientTable = (listClientes) => (
+const ClientTable = (props) => (
     <Table striped bordered hover>
         <thead>
             <tr>
@@ -14,8 +14,8 @@ const ClientTable = (listClientes) => (
             </tr>
         </thead>
         <tbody>
-            { listClientes.clients.map((client) => (
-                <tr key={ client.id }>
+            { props.clients.map((client, index) => {
+                return (<tr>
                     <td>{client.id}</td>
                     <td>{client.name}</td>
                     <td>{client.age}</td>
@@ -24,8 +24,8 @@ const ClientTable = (listClientes) => (
                         <Button variant="secondary">Editar</Button> {' '}
                         <Button variant="danger">Excluir</Button>
                     </td>
-                </tr>
-            ))}
+                </tr>)
+            })}
         </tbody>
     </Table>
 );
