@@ -15,13 +15,14 @@ const ClientTable = (props) => (
         </thead>
         <tbody>
             { props.clients.map((client, index) => {
-                return (<tr>
-                    <td>{client.id}</td>
+                return (
+                <tr>
+                    <th scope="row">{client.id}</th>
                     <td>{client.name}</td>
                     <td>{client.age}</td>
                     <td>{client.email}</td>
                     <td>
-                        <Button variant="secondary">Editar</Button> {' '}
+                        <Button variant="warning">Editar</Button> {' '}
                         <Button variant="danger">Excluir</Button>
                     </td>
                 </tr>)
