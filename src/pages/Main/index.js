@@ -18,9 +18,13 @@ export default function App() {
     }, []);
 
     async function handleRefreshClient() {
-        const response = await api.get('/client');
+        try{
+            const response = await api.get('/client');
     
-        setClient(response.data);
+            setClient(response.data);
+        } catch(err){
+            console.log(err);
+        }
     }
 
     return (
